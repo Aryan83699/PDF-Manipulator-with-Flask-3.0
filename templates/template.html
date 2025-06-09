@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ value }}</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-k5Dg0yZPZNmq9ZpmpY8pK7XcQ5zPvUm8XjXu3Sm1Aj0BLQ4AKc9lh1Xp+pFV/Pa1zDZZY+0kg9m0UJn6wI7D+Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+        }
+
+        h2, h3 {
+            text-align: center;
+            margin-top: 30px;
+            color: #00ffe7;
+            text-shadow: 0 0 10px #00ffe7;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        input[type="file"] {
+            display: block;
+            width: 90%;
+            margin: 20px auto;
+            padding: 15px;
+            border: 2px dashed #00bcd4;
+            border-radius: 10px;
+            background-color: rgba(0, 188, 212, 0.1);
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        input[type="file"]:hover {
+            background-color: rgba(0, 188, 212, 0.2);
+            transform: scale(1.02);
+        }
+
+        input[type="submit"] {
+            display: block;
+            background-color: #00bcd4;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 20px auto;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0097a7;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+        }
+
+        h5 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        h5 a {
+            text-decoration: none;
+            color: #00eaff;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        h5 a:hover {
+            color: #00bcd4;
+            text-decoration: underline;
+        }
+
+        div {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2><b><i>{{ value }} Page</i></b></h2>
+    <h3>Drop Your File Below</h3>
+
+    <form method="POST" action="/{{ value }}" enctype="multipart/form-data">
+        <input type="file" name="drop" value="Drop Here">
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+        <input type="submit" value="Submit">
+        <h5><a href="home"><i class="fas fa-home"></i> Home Page</a></h5>
+    </form>
+
+</body>
+</html>

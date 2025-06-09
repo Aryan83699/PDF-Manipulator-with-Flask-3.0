@@ -1,0 +1,55 @@
+{% extends "template.html" %}
+{% block content %}
+<style>
+    .form-container {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        max-width: 400px;
+        margin: 40px auto;
+        text-align: center;
+        color: #fff;
+    }
+
+    .form-container label {
+        display: block;
+        font-size: 16px;
+        color: #00eaff;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-shadow: 0 0 6px rgba(0, 255, 255, 0.3);
+    }
+
+    .form-container input[type="password"] {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 16px;
+        background: rgba(0, 188, 212, 0.1);
+        border: 2px solid #00bcd4;
+        color: #fff;
+        border-radius: 10px;
+        box-sizing: border-box;
+        transition: 0.3s ease all;
+    }
+
+    .form-container input[type="password"]:focus {
+        border-color: #00ffe7;
+        outline: none;
+        box-shadow: 0 0 8px #00ffe7;
+        background: rgba(0, 188, 212, 0.2);
+    }
+
+    ::placeholder {
+        color: #ccc;
+        opacity: 0.7;
+    }
+</style>
+
+<div class="form-container">
+    <label>Enter the Password:</label>
+    <input type="password" name="value" required placeholder="Test@123...">
+</div>
+{% endblock %}

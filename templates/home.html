@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🚀 PDF Manipulator</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-k5Dg0yZPZNmq9ZpmpY8pK7XcQ5zPvUm8XjXu3Sm1Aj0BLQ4AKc9lh1Xp+pFV/Pa1zDZZY+0kg9m0UJn6wI7D+Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #00ffe7;
+            text-shadow: 0 0 10px #00ffe7;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        table {
+            border-spacing: 20px;
+        }
+
+        button {
+            background: #00bcd4;
+            border: none;
+            color: #fff;
+            padding: 14px 24px;
+            font-size: 16px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            min-width: 160px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        button i {
+            margin-right: 8px;
+        }
+
+        button:hover {
+            background: #00acc1;
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 188, 212, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🚀 Choose Your PDF Operation</h2>
+
+    <form method="POST" action="/index">
+        <table>
+            <tr>
+                <td><button type="submit" name="action" value="pdf2docx"><i class="fas fa-file-word"></i> Pdf to Docx</button></td>
+                <td><button type="submit" name="action" value="decrypt"><i class="fas fa-lock-open"></i> Decrypt</button></td>
+                <td><button type="submit" name="action" value="split"><i class="fas fa-scissors"></i> Split</button></td>
+                <td><button type="submit" name="action" value="encrypt"><i class="fas fa-lock"></i> Encrypt</button></td>
+            </tr>
+            <tr>
+                <td><button type="submit" name="action" value="rotate"><i class="fas fa-sync-alt"></i> Rotate</button></td>
+                <td><button type="submit" name="action" value="delete"><i class="fas fa-trash"></i> Delete</button></td>
+                <td><button type="submit" name="action" value="reverse"><i class="fas fa-exchange-alt"></i> Reverse</button></td>
+                <td><button type="submit" name="action" value="docx2pdf"><i class="fas fa-file-pdf"></i> Docx to Pdf</button></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
