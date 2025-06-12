@@ -2,7 +2,7 @@ from pdf2docx import Converter
 # from docx2pdf import convert
 import pikepdf as pk
 # import io
-import pythoncom
+# import pythoncom
 import zipfile
 import os
 
