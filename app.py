@@ -36,6 +36,7 @@ def index():
            return redirect(url_for('docx2pdf'))
         else :
            return print("Bye bye")
+    return render_template('home.html') 
 
 @app.route('/pdf2docx',methods=['GET','POST'])
 def pdf2docx():
