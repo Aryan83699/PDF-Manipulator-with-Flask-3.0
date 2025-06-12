@@ -167,18 +167,18 @@ def reverse():
 
 @app.route('/docx2pdf',methods=['GET','POST'])
 def docx2pdf():
-    if request.method=='POST':
-        file = request.files['drop']
+    # if request.method=='POST':
+    #     file = request.files['drop']
         
         
-        if file.filename=='':
-            return "No Selected File"
+    #     if file.filename=='':
+    #         return "No Selected File"
         
-        if file:
-            filepath=os.path.join(app.config['Pdf2.0'],file.filename)
-            file.save(filepath)
-            temp=f.d2p(filepath)
-            return send_file(temp, as_attachment=True)
+    #     if file:
+    #         filepath=os.path.join(app.config['Pdf2.0'],file.filename)
+    #         file.save(filepath)
+    #         temp=f.d2p(filepath)
+    #         return send_file(temp, as_attachment=True)
 
     return render_template('template.html',value='docx2pdf')
 

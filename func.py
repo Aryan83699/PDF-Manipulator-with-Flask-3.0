@@ -1,5 +1,5 @@
 from pdf2docx import Converter
-from docx2pdf import convert
+# from docx2pdf import convert
 import pikepdf as pk
 # import io
 import pythoncom
@@ -14,14 +14,14 @@ def p2d(file):
     cv.close()
     return new
 
-def d2p(file):
-    pythoncom.CoInitialize()
-    old=str(file)
-    # print(file)
-    new=old.replace('.docx','.pdf')
-    convert(old,new)
-    pythoncom.CoUninitialize()
-    return new
+# def d2p(file):
+#     pythoncom.CoInitialize()
+#     old=str(file)
+#     # print(file)
+#     new=old.replace('.docx','.pdf')
+#     convert(old,new)
+#     pythoncom.CoUninitialize()
+#     return new
 
 def rotate(file,value):
     ol=str(file)
